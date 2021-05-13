@@ -1,4 +1,5 @@
 Goals
+- control mapping
 - physics engine 
 	- gravity
 	- force vector based
