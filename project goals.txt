@@ -1,0 +1,25 @@
+Goals
+- physics engine 
+	- gravity
+	- force vector based
+	- dynamic priory system
+- object types
+	- platform
+	- projectile
+	- physics effected
+		- players
+		- non player objects
+- intended test things
+	- test characters 
+		- neural 
+		- archetypal
+	- training dumby 
+	- 2+ basic stages
+	- test projectiles
+	- test object
+		- boxes
+			- destructible
+			- can stand on
+		- balls
+			- bouncy
+			- can deal damage
