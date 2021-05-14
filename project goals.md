@@ -1,8 +1,10 @@
 Goals
 - control mapping
 - physics engine 
+	- separate physics script
 	- gravity
 	- force vector based
+		- nah
 	- dynamic priory system
 - object types
 	- platform

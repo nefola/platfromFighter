@@ -51,5 +51,7 @@ public class PlayerController : MonoBehaviour
             tryJumping = false;
         }
 
+        print(rb.velocity);
+        // debug to check speed
     }
 }

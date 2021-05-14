@@ -32,7 +32,8 @@ public class PlayerManger : MonoBehaviour
         // lets us import from a PlayerController
         playerController = GetComponent<PlayerController>();
         coll = GetComponent<Collider2D>();
-        
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -46,6 +47,9 @@ public class PlayerManger : MonoBehaviour
         groundedCheck();      
 
         xDireactionManagment();
+
+        // gravity();
+        // custom gravity out of use untill grounded status is fixed and movement is transfered out of playerControler
 
         //refreshes jumps on ground, subject to change
         
@@ -65,7 +69,7 @@ public class PlayerManger : MonoBehaviour
             airJumps = 3;
         }
 
-
+        
     }
    // called functions here
     private void xDireactionManagment()
@@ -93,5 +97,12 @@ public class PlayerManger : MonoBehaviour
             amGrounded = false;
         }
         // print(amGrounded); //debug line
+    }
+    private void gravity()
+    {
+        if (amGrounded == false)
+        {
+            rb.velocity = new Vector2(rb.velocity.x , rb.velocity.y - 0.3f);
+        }
     }
 }
