@@ -273,6 +273,11 @@ MonoBehaviour:
   amLeft: 0
   amRight: 1
   amGrounded: 1
+  hasAirJumps: 0
+  airJumps: 3
+  platfrom:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &209388655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,9 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1406f383ddc74b549b741b41a9e6b1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 209388652}
+  playerManger: {fileID: 209388654}
   beLeft: 0
   beRight: 0
+  tryJumping: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,8 +391,8 @@ GameObject:
   - component: {fileID: 648777932}
   - component: {fileID: 648777934}
   - component: {fileID: 648777933}
-  m_Layer: 0
-  m_Name: Tilemap
+  m_Layer: 6
+  m_Name: testStage0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
