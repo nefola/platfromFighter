@@ -7,11 +7,14 @@ public class PlayerManger : MonoBehaviour
     public PlayerController playerController;
     public Transform transfrom;
     private Rigidbody2D rb;
-    private Collider2D coll;
+    public Collider2D bottom;
+    //public EdgeCollider2D bottom;
+    public Collider2D coll;
     // things that are refenced
     public bool amLeft = false;
     public bool amRight = true;
     public bool amGrounded = true;
+    //public float groundDistance;
     public bool hasAirJumps;
     bool amJumping;
     public int airJumps = 3;
@@ -31,8 +34,9 @@ public class PlayerManger : MonoBehaviour
     {
         // lets us import from a PlayerController
         playerController = GetComponent<PlayerController>();
-        coll = GetComponent<Collider2D>();
+        //coll = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        //bottom = GetComponent<EdgeCollider2D>();
 
     }
 
@@ -47,6 +51,8 @@ public class PlayerManger : MonoBehaviour
         groundedCheck();      
 
         xDireactionManagment();
+
+       // groundDistance = coll.Raycast(new Vector2 ( 0, -1), new RaycastHit2D[]);
 
         // gravity();
         // custom gravity out of use untill grounded status is fixed and movement is transfered out of playerControler
@@ -69,7 +75,7 @@ public class PlayerManger : MonoBehaviour
             airJumps = 3;
         }
 
-        
+         
     }
    // called functions here
     private void xDireactionManagment()
@@ -88,7 +94,7 @@ public class PlayerManger : MonoBehaviour
     }
     private void groundedCheck()
     {
-        if (coll.IsTouchingLayers(platfrom))      // the platform layer
+        if (bottom.IsTouchingLayers(platfrom) /*&& bottom.IsTouchingLayers(platfrom)*/)      // the platform layer
         {
             amGrounded = true;
         }
